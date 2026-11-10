@@ -1,0 +1,6 @@
+config_id,T,interval,window_fr,backbone,description,best_WAR,best_WAR_std,best_UAR,best_UAR_std,best_MacroF1,best_MacroF1_std,best_WF1,best_WF1_std
+A,8,2,16,swin3d_t,narrow-dense  (window=16fr),41.27,5.9412,41.27,5.9412,32.29,3.8302,32.29,3.8302
+B,8,4,32,swin3d_t,medium-sparse (window=32fr),50.7933,4.4878,50.7933,4.4878,48.14,5.3158,48.14,5.3158
+C,16,2,32,swin3d_t,medium-dense  (window=32fr),52.38,3.8865,52.38,3.8865,49.48,2.4482,49.48,2.4482
+D,16,4,64,swin3d_t,wide-sparse   (window=64fr),52.38,6.7317,52.38,6.7317,47.75,7.2751,47.75,7.2751
+E,32,2,64,swin3d_t,wide-dense    (window=64fr),50.0,8.165,50.7933,9.7809,46.0133,10.9038,45.5367,9.4631

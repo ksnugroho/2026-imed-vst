@@ -1,0 +1,26 @@
+============================================================
+Step 6 — Wilcoxon Signed-Rank Test
+  Baseline  : step1_swin3d_s_7cls
+  Proposed  : step3_td_gru_7cls
+  Setup     : LOSO 7-class, 3 seeds × 15 folds = 45 pairs
+============================================================
+
+Mean WAR (baseline) : 63.54%
+Mean WAR (proposed) : 64.13%
+Mean difference     : +0.58% ± 17.78%
+
+proposed > baseline : 13/45 folds (28.9%)
+proposed < baseline : 14/45 folds (31.1%)
+tie                 : 18/45 folds
+
+Wilcoxon statistic  : 180.5000
+p-value (two-sided) : 0.8374
+p-value (one-sided, proposed > baseline) : 0.5813
+Effect size r       : 0.031 (negligible)
+
+→ NOT significant (p=0.5813 ≥ α=0.05): proposed does not significantly outperform baseline.
+
+Per-seed breakdown:
+  seed=42: baseline=59.84%  proposed=65.71%  diff=+5.87%  better=6/15
+  seed=123: baseline=62.86%  proposed=63.49%  diff=+0.63%  better=4/15
+  seed=456: baseline=67.94%  proposed=63.18%  diff=-4.76%  better=3/15

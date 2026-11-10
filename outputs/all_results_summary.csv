@@ -1,0 +1,35 @@
+step,experiment,WAR_mean,WAR_std,UAR_mean,UAR_std,MacroF1_mean,MacroF1_std,WF1_mean,WF1_std,notes
+step0_temporal,ablation_A_narrow-dense,0.4127,0.0594,0.4127,0.0594,0.3229,0.0383,0.3229,0.0383,narrow-dense  (window=16fr)
+step0_temporal,ablation_B_medium-sparse,0.5079,0.0449,0.5079,0.0449,0.4814,0.0532,0.4814,0.0532,medium-sparse (window=32fr)
+step0_temporal,ablation_C_medium-dense,0.5238,0.0389,0.5238,0.0389,0.4948,0.0245,0.4948,0.0245,medium-dense  (window=32fr)
+step0_temporal,ablation_D_wide-sparse,0.5238,0.0673,0.5238,0.0673,0.4775,0.0728,0.4775,0.0728,wide-sparse   (window=64fr)
+step0_temporal,ablation_E_wide-dense,0.5000,0.0816,0.5079,0.0978,0.4601,0.1090,0.4554,0.0946,wide-dense    (window=64fr)
+exp_frozen,exp_frozen_backbone_td_gru,0.5730,0.1620,0.5556,0.1522,0.4705,0.1707,0.4863,0.1844,frozen backbone td_gru
+step1_backbone,step1_swin3d_s_7cls,0.6354,0.1665,0.6159,0.1598,0.5357,0.1846,0.5534,0.1941,swin3d_s 7cls
+step1_backbone,step1_swin3d_t_7cls,0.5333,0.1441,0.5175,0.1379,0.4206,0.1560,0.4342,0.1648,swin3d_t 7cls
+step2_loss,step2_focal_7cls,0.6280,0.1576,0.6095,0.1518,0.5261,0.1760,0.5426,0.1851,focal loss 7cls
+step3_td,step3_td_gru_7cls,0.6413,0.1665,0.6222,0.1617,0.5426,0.1880,0.5603,0.1966,td_gru 7cls
+step3_td,step3_td_gru_freeze15_7cls,0.6233,0.1395,0.6032,0.1297,0.5197,0.1588,0.5382,0.1714,td_gru freeze15 7cls
+step4a_19cls,step4a_twostage_19cls,0.2751,0.0859,0.2702,0.0861,0.1952,0.0827,0.1987,0.0836,two-stage 19cls
+step4b_19cls,step4b_direct_notd_19cls,0.2790,0.0778,0.2737,0.0779,0.1894,0.0750,0.1929,0.0758,direct no-TD 19cls
+step4b_19cls,step4b_direct_td_gru_19cls,0.2970,0.1045,0.2912,0.1033,0.2201,0.0971,0.2244,0.0993,direct td_gru 19cls
+exp_td_full_ext,step5_td_full_ext,0.6492,0.1652,0.6317,0.1626,0.5592,0.1776,0.5753,0.1841,td_full direct fine-tune multi-seed
+exp_seqlen,exp_seqlen_D16_td_gru,0.6175,0.2167,0.5714,0.1881,0.4981,0.2178,0.5412,0.2520,seqlen D=16 td_gru
+exp_seqlen,exp_seqlen_D4_td_gru,0.6032,0.1685,0.5905,0.1638,0.4911,0.1905,0.5028,0.1972,seqlen D=4 td_gru
+step5b,step5b_td_gru_attn_freeze15,0.5444,0.2170,0.5333,0.2117,0.4473,0.2161,0.4568,0.2228,td_gru_attn freeze15 single-seed
+step5_td_ablation,step5_td_base,0.6159,,0.6000,,0.5117,,0.5252,,transformer 1L no-PE ffn=1536 mean
+step5_td_ablation,step5_td_pe,0.6111,,0.5905,,0.5086,,0.5279,,transformer 1L +PE  ffn=1536 mean
+step5_td_ablation,step5_td_2l,0.5968,,0.5809,,0.4838,,0.4973,,transformer 2L no-PE ffn=1536 mean
+step5_td_ablation,step5_td_4x,0.6318,,0.6095,,0.5108,,0.5309,,transformer 1L no-PE ffn=3072 mean
+step5_td_ablation,step5_td_cls,0.6286,,0.6095,,0.5270,,0.5439,,transformer 1L no-PE ffn=1536 CLS
+step5_td_ablation,step5_td_full,0.6365,,0.6190,,0.5467,,0.5631,,transformer 2L +PE  ffn=3072 CLS
+step5_td_ablation,step5_td_pe_cls,0.6349,,0.6191,,0.5444,,0.5590,,transformer 1L +PE  ffn=1536 CLS
+step5_td_ablation,step5_td_maxpool,0.6079,,0.5905,,0.4987,,0.5141,,no-encoder  max pool
+step5_td_ablation,step5_td_gru,0.6571,,0.6381,,0.5632,,0.5812,,BiGRU 1L
+step6_wilcoxon,step6_wilcoxon,0.6413,,,,,,,,p_one=0.5813; r=0.031 (negligible); NOT significant (p=0.5813 ≥ α=0.05): proposed does not significantly outperform baseline.
+step6_wilcoxon,step6_baseline,0.6354,,,,,,,,swin3d_s no-TD baseline
+step7_identity_leakage,step7_LOSO,0.6571,0.2145,0.6381,0.2078,0.5632,0.2402,,,LOSO (disjoint)
+step7_identity_leakage,step7_random_split,0.3810,0.0674,0.3810,0.0674,0.3470,0.0715,,,Random 60/20/20 (leaked)
+inference_timing,swin3d_t__no-TD,,,,,,,,,params=27.9M ms/clip=25.39±0.14 clips/s=39.4
+inference_timing,swin3d_s__no-TD_baseline,,,,,,,,,params=49.5M ms/clip=42.74±0.13 clips/s=23.4
+inference_timing,swin3d_s__td_gru_proposed,,,,,,,,,params=52.2M ms/clip=44.23±0.05 clips/s=22.6

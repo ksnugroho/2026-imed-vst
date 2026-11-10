@@ -1,0 +1,39 @@
+# Dataset (video frames — not in repo)
+dataset/
+
+# Model checkpoints (too large)
+outputs/runs/
+
+# W&B logs
+wandb/
+
+# V1 experiments (deprecated)
+v1/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Env
+.env
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo

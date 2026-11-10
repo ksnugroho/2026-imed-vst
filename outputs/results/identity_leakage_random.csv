@@ -1,0 +1,4 @@
+condition,seed,best_epoch,train_clips,val_clips,test_clips,best_WAR,best_UAR,best_MacroF1,best_WF1,val_UAR,train_min
+random,42,25,60,21,21,28.57,28.57,25.0,25.0,52.38,3.5
+random,123,30,60,21,21,42.86,42.86,42.04,42.04,47.62,3.5
+random,456,15,60,21,21,42.86,42.86,37.05,37.05,42.86,3.5

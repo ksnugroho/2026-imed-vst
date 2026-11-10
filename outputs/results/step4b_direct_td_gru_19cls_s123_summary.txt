@@ -1,0 +1,47 @@
+LOSO Summary — step4b_direct_td_gru_19cls_s123
+Folds: 15/15
+Mean WAR        : 31.11% ± 12.23%
+Mean UAR        : 30.53% ± 12.18%
+Mean Macro-P    : 20.57% ± 10.90%
+Mean Macro-F1   : 23.19% ± 11.54%
+Mean Weighted-P : 20.93% ± 10.98%
+Mean Weighted-R : 31.11% ± 12.23%
+Mean W-F1       : 23.61% ± 11.63%
+
+Per-fold:
+  Fold  1: WAR=15.79% UAR=15.79% MacroP=9.21% MacroF1=10.88% WP=9.21% WR=15.79% WF1=10.88%
+  Fold  2: WAR=26.32% UAR=26.32% MacroP=12.02% MacroF1=15.26% WP=12.02% WR=26.32% WF1=15.26%
+  Fold  3: WAR=33.33% UAR=31.58% MacroP=21.49% MacroF1=24.04% WP=22.69% WR=33.33% WF1=25.37%
+  Fold  4: WAR=50.00% UAR=47.37% MacroP=34.21% MacroF1=38.60% WP=36.11% WR=50.00% WF1=40.74%
+  Fold  5: WAR=31.58% UAR=31.58% MacroP=20.18% MacroF1=23.68% WP=20.18% WR=31.58% WF1=23.68%
+  Fold  6: WAR=31.58% UAR=31.58% MacroP=22.37% MacroF1=24.91% WP=22.37% WR=31.58% WF1=24.91%
+  Fold  7: WAR=36.84% UAR=36.84% MacroP=30.70% MacroF1=32.46% WP=30.70% WR=36.84% WF1=32.46%
+  Fold  8: WAR=57.89% UAR=57.89% MacroP=43.86% MacroF1=48.25% WP=43.86% WR=57.89% WF1=48.25%
+  Fold  9: WAR=21.05% UAR=21.05% MacroP=17.11% MacroF1=17.89% WP=17.11% WR=21.05% WF1=17.89%
+  Fold 10: WAR=47.37% UAR=47.37% MacroP=34.09% MacroF1=37.28% WP=34.09% WR=47.37% WF1=37.28%
+  Fold 11: WAR=16.67% UAR=15.79% MacroP=7.77% MacroF1=9.21% WP=8.20% WR=16.67% WF1=9.72%
+  Fold 12: WAR=27.78% UAR=26.32% MacroP=18.42% MacroF1=21.05% WP=19.44% WR=27.78% WF1=22.22%
+  Fold 13: WAR=22.22% UAR=21.05% MacroP=11.40% MacroF1=14.04% WP=12.04% WR=22.22% WF1=14.81%
+  Fold 14: WAR=16.67% UAR=15.79% MacroP=3.38% MacroF1=5.45% WP=3.57% WR=16.67% WF1=5.75%
+  Fold 15: WAR=31.58% UAR=31.58% MacroP=22.37% MacroF1=24.91% WP=22.37% WR=31.58% WF1=24.91%
+
+Per-class recall (mean ± std):
+  angrily-disgusted        : 20.00% ± 40.00%
+  angrily-surprised        : 20.00% ± 40.00%
+  angry                    : 33.33% ± 47.14%
+  disgust                  : 13.33% ± 33.99% ←
+  disgustedly-surprised    : 26.67% ± 44.22%
+  fear                     : 13.33% ± 33.99% ←
+  fear-angry               : 13.33% ± 33.99% ←
+  fear-disgust             : 6.67% ± 24.94% ←
+  fear-surprise            : 20.00% ± 40.00%
+  happy                    : 80.00% ± 40.00%
+  happy-disgust            : 33.33% ± 47.14%
+  happy-surprise           : 53.33% ± 49.89%
+  neutral                  : 73.33% ± 44.22%
+  sad                      : 40.00% ± 48.99%
+  sad-angry                : 20.00% ± 40.00%
+  sad-disgust              : 20.00% ± 40.00%
+  sad-fear                 : 6.67% ± 24.94% ←
+  sad-surprise             : 40.00% ± 48.99%
+  surprise                 : 46.67% ± 49.89%

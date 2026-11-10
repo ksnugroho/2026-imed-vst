@@ -1,0 +1,35 @@
+LOSO Summary — step3_td_gru_freeze15_7cls_agg
+Folds: 15/15
+Mean WAR        : 62.33% ± 13.95%
+Mean UAR        : 60.32% ± 12.97%
+Mean Macro-P    : 48.74% ± 16.88%
+Mean Macro-F1   : 51.97% ± 15.88%
+Mean Weighted-P : 50.52% ± 18.20%
+Mean Weighted-R : 62.33% ± 13.95%
+Mean W-F1       : 53.82% ± 17.14%
+
+Per-fold:
+  Fold  1: WAR=61.90% UAR=61.90% MacroP=48.01% MacroF1=51.91% WP=48.01% WR=61.90% WF1=51.91%
+  Fold  2: WAR=47.62% UAR=47.62% MacroP=29.76% MacroF1=34.44% WP=29.76% WR=47.62% WF1=34.44%
+  Fold  3: WAR=66.67% UAR=57.14% MacroP=54.76% MacroF1=55.55% WP=63.89% WR=66.67% WF1=64.82%
+  Fold  4: WAR=88.89% UAR=76.19% MacroP=71.43% MacroF1=73.02% WP=83.33% WR=88.89% WF1=85.19%
+  Fold  5: WAR=95.24% UAR=95.24% MacroP=92.86% MacroF1=93.65% WP=92.86% WR=95.24% WF1=93.65%
+  Fold  6: WAR=57.14% UAR=57.14% MacroP=42.86% MacroF1=46.66% WP=42.86% WR=57.14% WF1=46.66%
+  Fold  7: WAR=57.14% UAR=57.14% MacroP=45.63% MacroF1=48.73% WP=45.63% WR=57.14% WF1=48.73%
+  Fold  8: WAR=52.38% UAR=52.38% MacroP=41.27% MacroF1=44.44% WP=41.27% WR=52.38% WF1=44.44%
+  Fold  9: WAR=57.14% UAR=57.14% MacroP=46.03% MacroF1=49.21% WP=46.03% WR=57.14% WF1=49.21%
+  Fold 10: WAR=71.43% UAR=71.43% MacroP=61.11% MacroF1=64.29% WP=61.11% WR=71.43% WF1=64.29%
+  Fold 11: WAR=71.43% UAR=71.43% MacroP=58.73% MacroF1=62.70% WP=58.73% WR=71.43% WF1=62.70%
+  Fold 12: WAR=52.38% UAR=52.38% MacroP=37.30% MacroF1=41.11% WP=37.30% WR=52.38% WF1=41.11%
+  Fold 13: WAR=55.56% UAR=47.62% MacroP=34.29% MacroF1=38.10% WP=40.00% WR=55.56% WF1=44.45%
+  Fold 14: WAR=42.86% UAR=42.86% MacroP=22.22% MacroF1=27.78% WP=22.22% WR=42.86% WF1=27.78%
+  Fold 15: WAR=57.14% UAR=57.14% MacroP=44.84% MacroF1=47.94% WP=44.84% WR=57.14% WF1=47.94%
+
+Per-class recall (mean ± std):
+  angry                    : 64.44% ± 41.22%
+  disgust                  : 40.00% ± 38.87%
+  fear                     : 44.44% ± 41.57%
+  happy                    : 91.11% ± 19.12%
+  neutral                  : 57.78% ± 41.22%
+  sad                      : 66.67% ± 32.20%
+  surprise                 : 57.78% ± 44.67%

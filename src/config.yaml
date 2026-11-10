@@ -1,0 +1,80 @@
+# Video Swin Transformer — Temporal FER (iMED-VST)
+# Dataset: IMED "VIDEO MIXED EMOTION"
+# Target: Scopus Q2
+# num_frames dan frame_interval diisi setelah Step 0 selesai (pilih config T+interval terbaik)
+
+# --- Dataset ---
+dataset:
+  name: imed
+  root: dataset/VIDEO MIXED EMOTION
+  emotion_set: basic        # basic (7 kelas) | all (19 kelas) — ubah per step
+  num_classes: 7            # 7 (step 1-3) | 19 (step 4)
+  class_names:              # 7-class (step 1-3)
+    - angry
+    - disgust
+    - fear
+    - happy
+    - neutral
+    - sad
+    - surprise
+  split_mode: loso
+  test_subject: 1           # di-override oleh run_loso.py
+
+  num_frames: 16            # Step 0 terbaik: Config C (UAR=47.62%, MacroF1=48.44%)
+  frame_interval: 2         # window=32fr, tiebreak by MacroF1 atas B dan D
+  img_size: 224
+  num_workers: 4
+  pin_memory: true
+  train_ratio: 0.8
+
+# --- Model ---
+model:
+  backbone: swin3d_t        # swin3d_t | swin3d_s
+  pretrained: true
+  drop_path_rate: 0.2
+  dropout_head: 0.5
+  use_td: false             # false (step 1-2) | true (step 3-4)
+
+# --- Training ---
+train:
+  epochs: 50
+  batch_size: 8
+  seed: 42
+
+  optimizer: AdamW
+  lr: 0.0001
+  min_lr: 0.000001
+  weight_decay: 0.05
+  clip_grad: 5.0
+
+  scheduler: cosine
+  warmup_epochs: 5
+
+  loss_type: ce             # ce | focal
+  label_smoothing: 0.1      # hanya dipakai jika loss_type=ce
+  focal_gamma: 2.0          # hanya dipakai jika loss_type=focal
+  use_weighted_loss: true
+
+  # Two-stage (khusus step 4)
+  freeze_backbone_epochs: 10   # epoch 1-10 backbone frozen, 11-50 unfreeze
+
+# --- Augmentasi ---
+augment:
+  flip_horizontal: 0.5
+  color_jitter: 0.4
+  random_grayscale: 0.1
+  temporal_jitter: true
+
+# --- Evaluasi ---
+eval:
+  batch_size: 8
+  eval_every_n_epochs: 5
+
+# --- Logging ---
+logging:
+  log_dir: outputs/runs
+
+# --- Hardware ---
+hardware:
+  device: 0
+  mixed_precision: true     # fp16 (Quadro RTX 8000 = Turing, tidak support bf16)

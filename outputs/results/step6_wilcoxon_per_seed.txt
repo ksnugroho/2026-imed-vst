@@ -1,0 +1,28 @@
+Per-Seed Wilcoxon Signed-Rank Test — td_gru vs baseline (swin3d_s no-TD)
+Setup: 1 seed × 15 folds = 15 pairs | two-sided | α = 0.05
+========================================================================
+
+Seed 42 (td_gru WAR=65.71%, baseline WAR=59.84%, Δ=+5.87%):
+  WAR   : p=0.3717, r=0.231 (small effect) — not significant
+  UAR   : p=0.5136, r=0.169 (small effect) — not significant
+  MacF1 : p=0.3105, r=0.262 (small effect) — not significant
+  WF1   : p=0.2784, r=0.280 (small effect) — not significant
+
+Seed 123 (td_gru WAR=63.49%, baseline WAR=62.86%, Δ=+0.63%):
+  WAR   : p=0.6823, r=0.106 (small effect) — not significant
+  UAR   : p=0.8375, r=0.053 (negligible)   — not significant
+  MacF1 : p=0.8751, r=0.041 (negligible)   — not significant
+  WF1   : p=0.8137, r=0.061 (negligible)   — not significant
+
+Seed 456 (td_gru WAR=63.18%, baseline WAR=67.94%, Δ=-4.76%):
+  WAR   : p=0.2597, r=0.291 (small effect) — not significant (baseline better)
+  UAR   : p=0.2597, r=0.291 (small effect) — not significant (baseline better)
+  MacF1 : p=0.2860, r=0.275 (small effect) — not significant (baseline better)
+  WF1   : p=0.2860, r=0.275 (small effect) — not significant (baseline better)
+
+Combined (45 pairs, run_step6_wilcoxon.py):
+  WAR   : p=0.5813 (one-sided), r=0.031 (negligible) — not significant
+
+Note: Per-seed results show high seed-to-seed variability (seed=42: Δ=+5.87%,
+seed=123: Δ=+0.63%, seed=456: Δ=-4.76%), explaining why the combined r is negligible.
+With n=15 per seed, statistical power is insufficient to detect small effects.

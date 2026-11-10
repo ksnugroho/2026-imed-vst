@@ -1,0 +1,6 @@
+config_id,description,backbone,T,interval,window_fr,best_epoch,best_WAR,best_UAR,best_MacroP,best_MacroF1,best_WeightedP,best_WeightedR,best_WF1,train_min,recall_angry,recall_disgust,recall_fear,recall_happy,recall_neutral,recall_sad,recall_surprise
+A,narrow-dense  (window=16fr),swin3d_t,8,2,16,25,33.33,33.33,26.43,27.34,26.43,33.33,27.34,2.2,66.67,0.0,0.0,100.0,0.0,0.0,66.67
+B,medium-sparse (window=32fr),swin3d_t,8,4,32,40,47.62,47.62,54.29,46.73,54.29,47.62,46.73,2.2,66.67,33.33,33.33,100.0,33.33,0.0,66.67
+C,medium-dense  (window=32fr),swin3d_t,16,2,32,45,47.62,47.62,56.9,48.44,56.9,47.62,48.44,4.3,66.67,33.33,33.33,100.0,33.33,0.0,66.67
+D,wide-sparse   (window=64fr),swin3d_t,16,4,64,20,47.62,47.62,57.31,44.72,57.31,47.62,44.72,4.3,66.67,0.0,33.33,100.0,33.33,33.33,66.67
+E,wide-dense    (window=64fr),swin3d_t,32,2,64,40,40.0,38.1,39.29,33.29,41.25,40.0,34.95,7.8,66.67,0.0,33.33,100.0,0.0,0.0,66.67

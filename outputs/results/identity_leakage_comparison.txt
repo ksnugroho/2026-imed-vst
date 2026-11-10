@@ -1,0 +1,13 @@
+========================================================================
+Identity Leakage Controlled Experiment — iMED-VST
+Kondisi A: LOSO (subjek disjoint)  |  Kondisi B: Random 60/20/20
+========================================================================
+Condition                     n           WAR           UAR       MacroF1
+------------------------------------------------------------------------
+  LOSO (disjoint)            15   65.71%±21.45%   63.81%±20.78%   56.32%±24.02%
+  Random 60/20/20 (leaked)    3   38.10%±6.74%   38.10%±6.74%   34.70%±7.15%
+------------------------------------------------------------------------
+  Δ WAR (random − LOSO) = -27.62%
+  Selisih ini adalah estimasi besarnya identity leakage bias
+  pada prior work yang menggunakan random split.
+========================================================================
