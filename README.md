@@ -64,6 +64,8 @@ This repository contains code and experimental results investigating the effecti
 
 **Selected:** `swin3d_s` (Step 1 → WAR 63.54% vs swin3d_t 53.33%)
 
+> Ze Liu, Jia Ning, Yue Cao, Yixuan Wei, Zheng Zhang, Stephen Lin, Han Hu. **Video Swin Transformer.** *CVPR 2022*. DOI: https://doi.org/10.1109/CVPR52688.2022.00320
+
 ### Temporal Depth Enhancement (TD) Module
 
 Inserted after the backbone `norm` layer, replacing `avgpool`:
@@ -142,7 +144,7 @@ TD overhead: **+1.49 ms/clip (+3.5%)**
 
 ## Dataset
 
-**IMED "VIDEO MIXED EMOTION"**
+**IMED "VIDEO MIXED EMOTION"** — available at https://imed.cs.ui.ac.id/
 
 | Attribute | Value |
 |---|---|
@@ -153,6 +155,10 @@ TD overhead: **+1.49 ms/clip (+3.5%)**
 | All classes (`emotion_set=all`) | 19: 7 basic + 12 compound |
 | Selected temporal config | T=16, interval=2, window=32fr |
 
+If you use this dataset, please cite:
+
+> Dewi Yanti Liliana, T. Basaruddin, Imelda Ika Dian Oriza. **The Indonesian Mixed Emotion Dataset (IMED): A Facial Expression Dataset for Mixed Emotion Recognition.** In *Proceedings of the 2018 International Conference on Artificial Intelligence and Virtual Reality (AIVR 2018)*. ACM, New York, NY, USA, 56–60. DOI: https://doi.org/10.1145/3293663.3293671
+
 **Evaluation protocol (LOSO):**
 ```
 Fold f (1–15):
@@ -162,8 +168,6 @@ Fold f (1–15):
 ```
 
 **Metrics:** WAR (= accuracy), UAR (= macro-recall), Macro-F1, W-F1
-
-> **Note V1 vs V2:** V1 used val = test subject (leakage). All V1 results in `v1/` are invalid. V2 corrects this protocol.
 
 ---
 
@@ -271,6 +275,14 @@ python src/summarize_results.py
 |---|---|---|---|---|
 | **LOSO** (disjoint subjects) | 15 | 65.71% ± 21.45% | 63.81% ± 20.78% | 56.32% ± 24.02% |
 | Random 60/20/20 (leaked) | 3 | 38.10% ± 6.74% | 38.10% ± 6.74% | 34.70% ± 7.15% |
+
+---
+
+## GradCAM Visualization
+
+GradCAM activations from `swin3d_s + td_gru` (seed=42, fold 1). Format: original frame | activation heatmap. Label format: `ground truth → predicted ✓/✗ (confidence%)`.
+
+![GradCAM fold 1](outputs/results/gradcam/step3_td_gru_7cls_s42_fold01_grid.jpg)
 
 ---
 
