@@ -1,6 +1,6 @@
-# 2026-imed-vst
+# Video Swin Transformer with Temporal Depth Enhancement for Mixed Emotion Recognition on the IMED Dataset
 
-This repository contains code and experimental results for `2026-imed-vst`, investigating the effectiveness of a **Temporal Depth Enhancement (TD)** module on the **Video Swin Transformer** architecture for video-based Facial Expression Recognition (FER). Experiments use the IMED "VIDEO MIXED EMOTION" dataset with Leave-One-Subject-Out (LOSO) evaluation and Wilcoxon signed-rank test for statistical validation.
+This repository contains code and experimental results investigating the effectiveness of a **Temporal Depth Enhancement (TD)** module on the **Video Swin Transformer** architecture for video-based Facial Expression Recognition (FER). Experiments use the IMED "VIDEO MIXED EMOTION" dataset with Leave-One-Subject-Out (LOSO) evaluation and Wilcoxon signed-rank test for statistical validation.
 
 ---
 
