@@ -278,6 +278,31 @@ python src/summarize_results.py
 
 ---
 
+## Pre-trained Checkpoint
+
+The best model checkpoint is available as a GitHub Release:
+
+| | |
+|---|---|
+| **Release** | [Model Checkpoint V1.0.0](https://github.com/ksnugroho/2026-imed-vst/releases/tag/v1.0.0) |
+| **File** | `fold_05_best.pt` (228 MB) |
+| **Model** | `swin3d_s + td_gru` (BiGRU 1 layer) |
+| **Seed / Fold** | seed=42, fold 05 (test subject: S06) |
+| **WAR (fold)** | 100% |
+| **Multi-seed WAR** | 64.13% ± 16.65% |
+
+```python
+from src.model import VideoSwinFER
+import torch
+
+model = VideoSwinFER(backbone="swin3d_s", use_td=True, td_variant="td_gru", num_classes=7)
+checkpoint = torch.load("fold_05_best.pt", map_location="cpu")
+model.load_state_dict(checkpoint["model_state_dict"])
+model.eval()
+```
+
+---
+
 ## GradCAM Visualization
 
 GradCAM activations from `swin3d_s + td_gru` (seed=42, fold 1). Format: original frame | activation heatmap. Label format: `ground truth → predicted ✓/✗ (confidence%)`.
